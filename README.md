@@ -30,8 +30,8 @@ By design, this assessment contains more work than you will be able to complete 
 - [ ] Run `npm install` inside the `react-client` directory to install dependencies for your frontend.
 - [ ] Run `npm install` inside the `backEnd` directory to install dependencies for your backend.
 - [ ] Ensure that the MongoDB process is running on your computer (`mongod`) if you are going to use mongoDb.
-- [ ] Create the database by running `npm run db:setup` from inside the `backEnd` directory. Make sure you check if the database was successfully seeded using MongoDBCompass or any tool of your choice. It should contain the 6 products in the `data.json` file.
-- [ ] If you chose to use MYSQL:
+- [ ] Create the database by running `npm run db:setup` from inside the `backEnd` directory. Make sure you check if the database was successfully seeded using MongoDBCompass or any tool of your choice. It should contain the 6 Charcters in the `data.json` file.
+- [ ] :
   - start your application with two commands, `npm  start` from inside the `react-client` directory and `npm start` from inside the `backEnd` directory , in two separate terminal tabs.
   - If successfully the react client will be opened automatically in your browser and you server should be listening on port 5000
   - first thing you need to do is to explore all the files in both react-client and backend directories and explore the application on your browser.
