@@ -30,7 +30,7 @@ const Character = ({character}) => {
             ))}
           </div>
           <div className="update-delete-buttons">
-            <button className="update-button" onClick={()=>{setStatus(!status)}}>Update View</button>
+            <button className="update-button" onClick={()=>{setStatus(!status)}}>Update</button>
             <button className="delete-button" >Delete</button>
           </div>
           {status&&<Update />}
