@@ -1,22 +1,29 @@
-import React,{useState} from 'react';
+import React, { useState } from "react";
 import "./styles/SearchBar.css";
 
+function SearchBar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState(""); 
 
-function SearchBar(props) {
-  
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value); 
+  };
+
+  const handleSearch = () => {
+   
+    onSearch(searchTerm);
+  };
+
   return (
     <div className="search-container">
       <input
         type="text"
-        placeholder="Search characters..."
+        placeholder="Search characters by name..."
         className="search-input"
+        value={searchTerm}
+        onChange={handleInputChange} 
       />
-      <button className="search-button" >
+      <button className="search-button" onClick={handleSearch}>
         <i className="fas fa-search"></i>
-       
-      </button>
-      <button className="reset-button" >
-      <i className="fas fa-sync"></i>
       </button>
     </div>
   );

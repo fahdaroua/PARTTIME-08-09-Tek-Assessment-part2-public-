@@ -20,17 +20,21 @@ app.get("/get", (req, res) => {
     .catch((err) => console.log(err));
 });
 app.post("/add", (req, res) => {
-  addCharacter(req.body)
+  const newCharacterData = req.body;
+  addCharacter(newCharacterData)
     .then((response) => res.status(201).json(response))
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.error("Error adding character:", err);
+      res.status(500).json({ error: "Internal server error" });
+    });
 });
+
 
 app.put("/update/:id", (req, res) => {
   const id = req.params.id;
   const data = req.body;
   updateCharacter(data, { _id: id })
     .then((updatedCharacter) => {
-      console.log(updateCharacter);
       res.status(202).json(updatedCharacter);
     })
     .catch((err) => {
@@ -40,9 +44,13 @@ app.put("/update/:id", (req, res) => {
 });
 
 app.delete("/delete/:id", (req, res) => {
-  deleteOne({ _id: req.params.id })
+  const id = req.params.id;
+  deleteOne({ _id: id })
     .then((resp) => res.status(203).json(resp))
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Internal server error" });
+    });
 });
 app.listen(port, () => {
   console.log(`listening on ${port}`);

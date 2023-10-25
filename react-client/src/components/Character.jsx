@@ -1,12 +1,24 @@
-import React,{useState}from 'react'
-import "./styles/AllCharacters.css";
-import Update from './Update.jsx';
-import axios from 'axios';
-const Character = ({character}) => {
-    const [status,setStatus] = useState(false)
-   
-   
-   
+mport React, { useState } from "react";
+import axios from "axios";
+import "./styles/Character.css";
+import Update from "./Update.jsx"; 
+
+const Character = ({ character }) => {
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
+
+  const handleDeleteCharacter = () => {
+    axios
+      .delete(`http://localhost:5000/delete/${character._id}`)
+      .then((resp) => {
+        console.log("Character deleted successfully:", resp.data);
+       =
+      })
+      .catch((err) => {
+        console.error("Error deleting character:", err);
+        
+      });
+  };
+
   return (
     <div  className="character-card">
           <img
@@ -30,8 +42,8 @@ const Character = ({character}) => {
             ))}
           </div>
           <div className="update-delete-buttons">
-            <button className="update-button" onClick={()=>{setStatus(!status)}}>Update</button>
-            <button className="delete-button" >Delete</button>
+            <button className="update-button" onClick={()=> setShowUpdateForm(!showUpdateForm)}>Update</button>
+            <button className="delete-button"onClick={handleDeleteCharacter} >Delete</button>
           </div>
           {status&&<Update />}
         </div>
