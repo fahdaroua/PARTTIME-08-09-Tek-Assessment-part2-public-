@@ -11,9 +11,10 @@ const app = express();
 const { db } = require("./mongoDb");
 
 app.use(express.json());
+app.use(express.urlencoded({ extended : true}))
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/get", (req, res) => {
   getAllCharachters()
     .then((response) => res.status(200).json(response))
     .catch((err) => console.log(err));
@@ -24,7 +25,7 @@ app.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.put("/api/:id", (req, res) => {
+app.put("/update/:id", (req, res) => {
   const id = req.params.id;
   const data = req.body;
   updateCharacter(data, { _id: id })
@@ -38,7 +39,7 @@ app.put("/api/:id", (req, res) => {
     });
 });
 
-app.delete("/:id", (req, res) => {
+app.delete("/delete/:id", (req, res) => {
   deleteOne({ _id: req.params.id })
     .then((resp) => res.status(203).json(resp))
     .catch((err) => console.log(err));

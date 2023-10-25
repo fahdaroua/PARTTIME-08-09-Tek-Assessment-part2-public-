@@ -17,9 +17,21 @@
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-left: 2px;
   }
-  
+  .reset-button{
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 4px;
+  }
   .search-button:hover {
     background-color: #c0392b;
   }
-  
+  .reset-button:hover{
+    background-color: #d4cac9;
+  }

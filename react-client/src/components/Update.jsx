@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./styles/AddCharacter.css";
-
+import axios from "axios";
 const Update = () => {
   
+ 
+
   return (
     <div className="container">
 
@@ -34,8 +36,8 @@ const Update = () => {
         </label>
         <textarea className="add-character-textarea" id="description" name="description"  />
 
-        <button type="button" className="add-character-button">
-          Add Character
+        <button type="button" className="add-character-button" >
+          Update Character
         </button>
       </form>
     </div>

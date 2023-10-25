@@ -3,12 +3,14 @@ import Home from "./components/Home.jsx";
 import AllCharacters from "./components/AllCharacters.jsx";
 import Add from "./components/Add.jsx";
 import SearchBar from "./components/SearchBar.jsx";
-import Update from "./components/Update.jsx";
 import "./App.css";
 import data from "./components/data.json";
+import axios from "axios"
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
+
+ 
   const changeView = (view) => {
     setCurrentPage(view);
   };
@@ -19,14 +21,16 @@ function App() {
       return <AllCharacters data={data} />;
     } else if (currentPage === "Add") {
       return <Add />;
-    } else if (currentPage === "update") {
-      return <Update />;
-    }
+    } 
   };
+
+ 
+
   return (
     <div className="app">
       <nav className="navbar">
         <div className="navbar-container">
+      
           <div className="navbar-logo" onClick={() => setCurrentPage("home")}>
             <img
               src="https://wallpapercave.com/dwp1x/wp12094525.jpg"
@@ -34,8 +38,9 @@ function App() {
               className="animated-logo"
             />
           </div>
-          <SearchBar />
+          
           <ul className="nav-menu">
+         
             <li className="nav-item" onClick={() => setCurrentPage("home")}>
               Home
             </li>
@@ -48,6 +53,7 @@ function App() {
             <li className="nav-item" onClick={() => setCurrentPage("Add")}>
               Add Character
             </li>
+            {currentPage ==="all-characters"&&<SearchBar />}
           </ul>
         </div>
       </nav>

@@ -23,6 +23,9 @@ By design, this assessment contains more work than you will be able to complete 
 ** This application is divided into two main folders one for the react client in a folder with the name react-client and one for the backend with the name backEnd.
 
 **Complete these setup tasks**:
+- [ ] open a the terminal from within the repository folder and split it into two terminals;
+- [ ] In the first one rund this command : cd backEnd/
+- [ ] In the second one rund this command : cd react-client/
 
 - [ ] Run `npm install` inside the `react-client` directory to install dependencies for your frontend.
 - [ ] Run `npm install` inside the `backEnd` directory to install dependencies for your backend.
@@ -43,10 +46,12 @@ The project involves several steps to complete various functionalities. Each ste
 
 ### Step One: Fetching Data from the Server
 
+- First make sure that the server is running !!!.
 - Implement Axios request in the client-side code to fetch characters from the server.
 - Update the client to replace sample data with data obtained from the server.
 - Make a commit with the message "Complete Step One" when done.
 
+- [url : `http://localhost:5000/get`  , method : `GET`]
 ---
 
 ### Step Two: Search Functionality
@@ -54,6 +59,8 @@ The project involves several steps to complete various functionalities. Each ste
 - Modify the search bar so that allows users to search for characters by name.
 - Update the client to make the search display search results.
 - Make a commit with the message "Complete Step Three" when done.
+
+
 
 ---
 
@@ -63,6 +70,7 @@ The project involves several steps to complete various functionalities. Each ste
 - Make sure to check the necessary server endpoint to acheive adding a character to the database
 - Make a commit with the message "Complete Step Four" when done.
 
+[url : `http://localhost:5000/add`  , method : `POST`]
 ---
 
 
@@ -72,6 +80,8 @@ The project involves several steps to complete various functionalities. Each ste
 - Make sure to check the necessary server endpoints to acheive updating and deleting a character from the database
 - Make a commit with the message "Complete Step Five" when done.
 
+[url : `http://localhost:5000/delete/:id`  , method : `DELETE`]
+[url : `http://localhost:5000/update/:id`  , method : `PUT`]
 --
 
 
