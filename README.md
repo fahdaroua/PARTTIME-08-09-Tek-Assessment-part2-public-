@@ -51,7 +51,7 @@ The project involves several steps to complete various functionalities. Each ste
 - Update the client to replace sample data with data obtained from the server.
 - Make a commit with the message "Complete Step One" when done.
 
-- [url : `http://localhost:5000/get`  , method : `GET`]
+[url : `http://localhost:5000/get`  , method : `GET`]
 ---
 
 ### Step Two: Search Functionality
@@ -80,7 +80,9 @@ The project involves several steps to complete various functionalities. Each ste
 - Make sure to check the necessary server endpoints to acheive updating and deleting a character from the database
 - Make a commit with the message "Complete Step Five" when done.
 
+
 [url : `http://localhost:5000/delete/:id`  , method : `DELETE`]
+---
 [url : `http://localhost:5000/update/:id`  , method : `PUT`]
 --
 
