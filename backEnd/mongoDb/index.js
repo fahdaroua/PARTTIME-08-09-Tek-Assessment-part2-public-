@@ -19,7 +19,7 @@ const addCharacter = (data) => {
 
 const updateCharacter = (data,id) => {
 return Characters.findOneAndUpdate(id,data,{
-  new: true// Make this update into an upsert
+  new: true
 })}
 
 const deleteOne = (id)=>{
