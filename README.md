@@ -24,8 +24,8 @@ By design, this assessment contains more work than you will be able to complete 
 
 **Complete these setup tasks**:
 - [ ] open a the terminal from within the repository folder and split it into two terminals;
-- [ ] In the first one rund this command : cd backEnd/
-- [ ] In the second one rund this command : cd react-client/
+- [ ] In the first one run this command : cd backEnd/
+- [ ] In the second one run this command : cd react-client/
 
 - [ ] Run `npm install` inside the `react-client` directory to install dependencies for your frontend.
 - [ ] Run `npm install` inside the `backEnd` directory to install dependencies for your backend.
