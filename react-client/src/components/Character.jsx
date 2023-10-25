@@ -1,8 +1,7 @@
-mport React, { useState } from "react";
-import axios from "axios";
-import "./styles/Character.css";
-import Update from "./Update.jsx"; 
-
+import React,{useState}from 'react'
+import "./styles/AllCharacters.css";
+import Update from './Update.jsx';
+import axios from 'axios';
 const Character = ({ character }) => {
   const [showUpdateForm, setShowUpdateForm] = useState(false);
 
@@ -11,7 +10,7 @@ const Character = ({ character }) => {
       .delete(`http://localhost:5000/delete/${character._id}`)
       .then((resp) => {
         console.log("Character deleted successfully:", resp.data);
-       =
+        
       })
       .catch((err) => {
         console.error("Error deleting character:", err);
@@ -45,7 +44,7 @@ const Character = ({ character }) => {
             <button className="update-button" onClick={()=> setShowUpdateForm(!showUpdateForm)}>Update</button>
             <button className="delete-button"onClick={handleDeleteCharacter} >Delete</button>
           </div>
-          {status&&<Update />}
+          {showUpdateForm && <Update character={character} />}
         </div>
   )
 }
